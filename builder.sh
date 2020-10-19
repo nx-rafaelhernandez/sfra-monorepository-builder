@@ -49,7 +49,15 @@ esac
 echo '#####################################'
 echo '## Installing sfra-webpack-builder ##'
 echo '#####################################'
-npm install https://github.com/SalesforceCommerceCloud/sfra-webpack-builder.git
+read -n1 -p "Do you want to use a token to install sfra-webpack-buildery? [y] " doit 
+case $doit in
+  y|Y)
+    echo ''
+    read -p "Type token: " token
+    npm install git+https://${token}:x-oauth-basic@github.com/SalesforceCommerceCloud/sfra-webpack-builder
+    break;;
+  *) npm install https://github.com/SalesforceCommerceCloud/sfra-webpack-builder.git ;;
+esac
 
 
 # Create necessary files as described on the repository
@@ -106,6 +114,7 @@ cat <<EOF >./.gitignore
 .vscode
 .idea
 node_modules
+dw.json
 EOF
 
 # Create vscode configuration
