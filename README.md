@@ -14,9 +14,9 @@ Shell script that creates a SFCC project following SFRA architecture and a monor
 
 
 # How to use it
-Copy the build.sh file into the root workspace folder. 
-Must no be inside a git repository folder.
-Run 
+Copy the build.sh file into the root workspace folder.  
+Must no be inside a git repository folder.  
+Run
 ```
 sh buider.sh
 ```
