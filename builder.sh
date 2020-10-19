@@ -49,7 +49,7 @@ esac
 echo '#####################################'
 echo '## Installing sfra-webpack-builder ##'
 echo '#####################################'
-read -n1 -p "Do you want to use a token to install sfra-webpack-buildery? [y] " doit 
+read -n1 -p "Do you want to use a token to install sfra-webpack-builder? [y,n] " doit 
 case $doit in
   y|Y)
     echo ''
@@ -78,7 +78,7 @@ module.exports.aliasConfig = {
   alias: {
     base: path.resolve(
       process.cwd(), // eslint-disable-next-line max-len
-      './app_storefront_base/cartridge/client/default/'
+      './${sfraFolder}/cartridges/app_storefront_base/cartridge/client/default/'
     )
   }
 }
@@ -111,6 +111,7 @@ EOF
 
 echo ' - .gitignore'
 cat <<EOF >./.gitignore
+.DS_Store
 .vscode
 .idea
 node_modules
